@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <style>
+        .top-bg{
+            height: 100%;
+            width:50%;
+            margin:auto;
+            margin-top:100px;
+            background-color:white;
+            border-radius: 30px;
+            border-color: black;
+            padding:20px 10px;
+        }
+        .emailstyle{
+            font-family: 'Times New Roman', Times, serif;
+            padding-top: 15px;
+        }
+        body{
+            background-color:teal;
+        }
+        .imgic{
+            border-radius: 50%;
+            height: 50px;
+            display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50px;
+
+        }
+    </style>
+    <title>Login Page</title>
+</head>
+<body onload=alertload() class="container-fluid">
+    <div class="container top-bg">
+      <div class="row">
+           <div class="col-12">
+              <h3 style="text-align:center;font-weight: 600;font-family: 'Times New Roman', Times, serif;font-size:20px;"> USER LOGIN </h3>
+              <img class="imgic" src="./login.png"/>
+            </div>
+            <div class="container">
+                <form style="display:none;" id="formvisi">
+                    <div class="form-group" >
+                      <label for="email" style="font-weight: 600;font-family: 'Times New Roman', Times, serif;">Email:</label>
+                      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    </div>
+                    <div class="form-group " style="padding: 20px 0px;">
+                      <label for="pwd" style="font-weight: 600;font-family: 'Times New Roman', Times, serif;">Password:</label>
+                      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                    </div>
+                    <button onclick="savedata()" type="submit" style="text-align: center;justify-content: center;border-radius: 10px;border-color:black ;font-family: 'Times New Roman', Times, serif;">Submit</button>
+                  </form>
+
+                  <div id="localvisi" style="display: none;">
+                      <h4 class="emailstyle"> USER EMAIL:</h2>
+                      <h6 id="emaillocal"> </h4>
+                      <h4 class="emailstyle">PASSWORD:</h2>
+                      <h6 id="pass"></h4>
+                        <h6 style="padding-top: 10px;text-align: center;font-family: 'Times New Roman', Times, serif;"> The above details are taken from the local storage</h6>
+                  </div>
+            </div>
+      </div>
+    </div>
+
+
+    <script>
+        function alertload(){
+            
+            if(!localStorage.getItem('email')){
+                document.getElementById('formvisi').style.display='block';
+                alert("Enter your details for local login..");
+                
+            }   
+            else{
+                alert("Welcome "+localStorage.getItem('email')+"!!!");
+                document.getElementById('formvisi').style.display='none';
+                document.getElementById('localvisi').style.display='block';
+                document.getElementById('emaillocal').innerHTML=localStorage.getItem('email');
+           document.getElementById('pass').innerHTML=localStorage.getItem('password');
+            }
+        }
+        function savedata(){
+           localStorage.setItem('email',document.getElementById('email').value);
+           localStorage.setItem('password',document.getElementById('pwd').value);
+           document.getElementById('emaillocal').innerHTML=localStorage.getItem('email');
+           document.getElementById('pass').innerHTML=localStorage.getItem('password');
+                document.getElementById('localvisi').style.display='block';
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
