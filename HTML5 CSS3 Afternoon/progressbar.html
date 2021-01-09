@@ -3,24 +3,42 @@
        <title>Progress Bar</title>
        <style>
            .divpro{
-            border:2px;
-            width:150px;
-            border-color:black;
-            height:50px;    
-            animation-name: progres;
+           
+             background-color:yellow;
+           
+           width:250px;
+			  height:50px;
+            animation: progres 4s linear;
            }
+		   .divtop{
+		      width:250px;
+			  height:50px;
+			    border:2px;
+				border-style: solid;
+			 border-color:black;
+		   }
            @keyframes progres {
                0%{
-                  background-color: aqua;
-
+                  
+                  width:0%
                }
                25%{
-                   background-color:aquacd;
+                   width:35%
                }
+			   50%{
+			       width:55%
+			   }
+			   100%{
+			       width:100%
+			   }
            }
     </style>   
    </head>
    <body>
-      <div class="divpro"></div>
+   <h1 style="text-align:center">Progress Bar</h1>
+      <div class="divtop">
+	     <div class="divpro">
+		 </div>
+	  </div>
    </body>
 </html>
