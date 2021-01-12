@@ -1,0 +1,2 @@
+To execute 5th ques ,travel sample bucket created the following error so in order to proceed, deleted that bucket and proceeded with a new bucket for 5th ques alone.
+JSON export failed: failed to get export transferable: exporting from a collection aware cluster requires scope/collection fields to be provided
