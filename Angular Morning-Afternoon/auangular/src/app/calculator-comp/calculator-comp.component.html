@@ -1,0 +1,24 @@
+<head>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="row">            
+            <div class="col-sm" style="text-align: center"><h1 style="color:brown">CALCULATOR</h1></div>
+          </div>
+                <p>Enter Num 1</p>
+                <input id="num1" style="margin-left: 10px;"  [(ngModel)]="num1"  />
+                <p>Enter Num 2</p>
+                <input id = "num2"  style="margin-left: 10px;" [(ngModel)]="num2"  />  
+                <br>
+          <div class="row" style="margin-top: 20px;">
+                <div id="buttons">
+                <button style="margin-right: 5px;" (click)="addition()">ADDITION</button>
+                <button style="margin-right: 5px;" (click)="subtraction()">SUBTRACTION</button>
+                <button style="margin-right: 5px;" (click)="multiply()">MULTIPLICATION</button>
+                <button style="margin-right: 5px;" (click)="divide()">DIVISION</button>
+                </div>
+          </div>
+                <h1>RESULT:{{ result }}</h1>
+    </div>
+</body>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <title>FORM</title>
+</head>
+<body>
+<div class="container" >
+    <h2 >FORM</h2>
+  <form [formGroup]="profileForm" (ngSubmit) = "onSubmit()">
+    <div class="row">
+     
+        <div class="form-group">
+          <label>
+            First Name:
+            <input type="text" formControlName="firstName">
+          </label>
+        </div>
+     
+     
+        <div class="form-group">
+          <label>
+            Last Name:
+            <input type="text" formControlName="lastName">
+          </label>
+        </div>
+     
+     
+        <div class="form-group">
+          <label>
+            Phone Number:
+            <input type="text" formControlName="ph">
+          </label>
+        </div>
+      
+      
+        <div class="form-group">
+          <label>
+            Email:
+            <input type="text" formControlName="Email">
+          </label>
+        </div>
+     
+    </div>
+  
+      <div class="row" >
+        <div class="col-6" ><button  type="submit" [disabled]="!profileForm.valid">Submit</button></div>
+        <div class="col-6"><button  (click) = "display()">Display</button></div>
+        
+      </div>
+     
+      
+  </form>
+  
+<br>
+  <table class = "table" style="width: 100%;">
+    <tr >
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone Number</th>
+        <th>E-Mail</th>
+    </tr>
+    <tr *ngFor = "let row of rows">
+        <td >{{row.firstName}}</td>
+        <td >{{row.lastName}}</td>
+        <td >{{row.ph}}</td>
+        <td >{{row.Email}}</td>
+      </tr>
+  </table>
+</div>
+</body>
+</html>
