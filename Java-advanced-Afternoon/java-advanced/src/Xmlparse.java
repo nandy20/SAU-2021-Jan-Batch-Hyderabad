@@ -31,7 +31,18 @@ public class Xmlparse {
           }
          System.out.println("Capitalized!!");
         
-         
+         try {
+        		 Class.forName("com.mysql.jdbc.Driver");
+        		 Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/auassign","root", "nandy.2008");
+
+             Xmlparse xmlParse = new Xmlparse();
+             xmlParse.createTables(connection);
+             xmlParse.insertData(connection, assignments);
+             System.out.println("Inserted!!");
+            
+         } catch (SQLException throwables) {
+             throwables.printStackTrace();
+         }
 
         } catch(Exception e) {
             e.printStackTrace();
