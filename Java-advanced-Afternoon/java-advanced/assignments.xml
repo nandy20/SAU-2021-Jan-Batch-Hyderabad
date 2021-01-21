@@ -1,0 +1,17 @@
+<assignments>
+    <assignment id="1">
+        <name>Git</name>
+        <prog_lang>git</prog_lang>
+        <status_update>completed</status_update>
+    </assignment>
+    <assignment id="2">
+        <name>Java</name>
+        <prog_lang>java</prog_lang>
+        <status_update>completed</status_update>
+    </assignment>
+    <assignment id="3">
+        <name>React</name>
+        <prog_lang>js</prog_lang>
+        <status_update>In progress</status_update>
+    </assignment>
+</assignments>
